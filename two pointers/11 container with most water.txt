@@ -1,0 +1,52 @@
+class Solution(object):
+    def getArea(self,i,j,height):
+        return min(height[i],height[j]) * (i-j)
+    
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+		
+        '''
+        枚举法
+        '''
+        max_area = 0 
+        lent = len(height)
+        for i in range(0,lent):
+            if height[i]==0:
+                continue
+            for j in range(0,i):
+                area = self.getArea(i,j,height)
+                if area > max_area:
+                    max_area = area
+        return max_area
+         
+        
+		
+class Solution(object):
+    def getArea(self,i,j,height):
+        return min(height[i],height[j]) * (i-j)
+    
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+		
+        '''
+		还是通不过大集合[1,2,3,4,5,6,7,8,9,...]
+        考虑边界情况，j与i不可能靠的特别近, (i-j)* height[i] >= max_area 可以退出j <= (i-max_area/height[i])
+        '''
+        max_area = 0 
+        lent = len(height)
+        for i in range(0,lent):
+            if height[i]==0:
+                continue
+            for j in range(0,min(i,i-max_area/height[i]+1)):
+                area = self.getArea(i,j,height)
+                if area > max_area:
+                    max_area = area
+        return max_area
+         
+        
