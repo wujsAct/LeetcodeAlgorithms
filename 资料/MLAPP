@@ -6,3 +6,15 @@ charpter 1:
 
 
 charpter 5: Bayesian statisitcs
+
+
+5.4 先验 Prior
+Bayesian statistic 最有争议的方面是它依赖于先验。Byesian学派认为这是不可避免的，因为没有人是白板（即没有认识知识）：所有的推断都是在基于
+对世界不确定性的假设完成的。 尽管如此，我们对如何最小化先验假设的影响还是非常感兴趣的。 
+下面讨论了几种方式去减小先验假设的影响。
+
+5.4.1 不具有信息的先验  Uninformative priors 
+我们对于参数 $theta$, 没有strong beliefs， 通常是采用 uninformative prior，然数据自己去说话。
+
+举个例子：
+对于Bernoulli parameter， 
